@@ -17,16 +17,59 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        ID context page
+        Before you continue you are required to prove who you are
       </h1>
 
-      <p>
-        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
-      </p>
+      <h3 class="govuk-heading-s">You will need:</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>UK passport (a passport that exprired with in the last 12 months can be used)</li>
+</ul>
 
-      <p>
-        Read more <a href="/path/of/page">about this topic</a>.
-      </p>
+<h3 class="govuk-heading-s">You will need one of the following if you do not have a UK passport:
+</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li>non UK-passport</li>
+<li>biometric residence card (BRC)</li>
+<li>biometric residence permit (BRP) </li>
+</ul>
+
+<h3 class="govuk-heading-s">You may need:
+</h3>
+<ul class="govuk-list govuk-list--bullet">
+<li>national insurance number</li>
+<li>GB driving or provisional driving licence number</li>
+</ul>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  name: "changedName",
+  fieldset: {
+    legend: {
+      text: "Do you have the identity document to continue?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
 
     </div>
   </div>
