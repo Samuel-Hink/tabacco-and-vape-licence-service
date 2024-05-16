@@ -16,17 +16,59 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Heading goes here
-      </h1>
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-      <p>
-        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
-      </p>
-
-      <p>
-        Read more <a href="/path/of/page">about this topic</a>.
-      </p>
+{{ govukRadios({
+  name: "signIn",
+  fieldset: {
+    legend: {
+      text: "What identity document do you have?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You’ll need to select one of the below documents to confirm your identity."
+  },
+  items: [
+    {
+      value: "uk-passport",
+      text: "UK passport",
+      hint: {
+      }
+    },
+    {
+      value: "non-uk-passport",
+      text: "Non UK passport",
+      hint: {
+      }
+    },
+    {
+      value: "biometric-residence-card",
+      text: "Biometric residence card",
+      hint: {
+      }
+    },
+    {
+      value: "biometric-residence-permit",
+      text: "Biometric residence permit",
+      hint: {
+      }
+    },
+    {
+      value: "national-identity-card",
+      text: "National identity card",
+      hint: {
+      }
+    },
+    {
+      value: "i-do-not-have-any-of-these-identity-documents",
+      text: "I do not have any of these identity documents",
+      hint: {
+      }
+    }
+  ]
+}) }}
 
     </div>
   </div>
