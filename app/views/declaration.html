@@ -22,15 +22,36 @@
 
       <form class="form" action="/path/of/next/page" method="post">
 
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
+        <p class="govuk-body">As part of the application process, you must confirm that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the information you’ve given is correct</li>
+          <li>you agree to the terms and conditions</li>
+        </ul>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "You could be prosecuted if you deliberately give untrue or misleading information.",
+  iconFallbackText: "Warning"
+}) }}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  
+  items: [
+    {
+      value: "iagree",
+      text: "I agree"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+      
 
       </form>
 
