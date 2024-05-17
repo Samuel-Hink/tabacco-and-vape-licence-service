@@ -23,7 +23,7 @@
         rows: [
           {
             key: {
-              text: "Question 1"
+              text: "Name"
             },
             value: {
               text: "Answer 1"
@@ -41,7 +41,7 @@
           ,
           {
             key: {
-              text: "Question 2"
+              text: "Sex"
             },
             value: {
               text: "Answer 2"
@@ -59,7 +59,7 @@
           ,
           {
             key: {
-              text: "Question 3"
+              text: "Date of birth"
             },
             value: {
               text: "Answer 3"
@@ -73,22 +73,130 @@
                 }
               ]
             }
+          },
+
+          {
+            key: {
+              text: "Current address"
+            },
+            value: {
+              text: "Answer 4"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 4"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Time at current address"
+            },
+            value: {
+              text: "Answer 5"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 5"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Previous address"
+            },
+            value: {
+              text: "Answer 6"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 6"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Time at previous address"
+            },
+            value: {
+              text: "Answer 7"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 7"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Email address"
+            },
+            value: {
+              text: "Answer 8"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 8"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Mobile number"
+            },
+            value: {
+              text: "Answer 9"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Question 9"
+                }
+              ]
+            }
           }
         ]
       }) }}
 
       <h2 class="govuk-heading-m">
-        Now send your application
+        What these details will be used for
       </h2>
 
       <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+        By continuing you are confirming that, to the best of your knowledge, the details you are providing are correct and you are consenting to us submitting these details to ID verification agencies to check your identity.
       </p>
 
       <form action="/confirmation" method="post" novalidate>
 
         {{ govukButton({
-          text: "Accept and send"
+          text: "Save and continue"
         }) }}
 
       </form>
