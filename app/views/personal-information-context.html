@@ -17,16 +17,111 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Heading goes here
+        Your details
       </h1>
+    
+        <h2 class="govuk-heading-l"></h2>
+        Enter your details as it appears on your documents
+        </h2>
+        <p>
+      
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-      <p>
-        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "changedName",
+  fieldset: {
+    legend: {
+      
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      
+    }
+  },
+  hint: {
+    text: "Sex."
+  },
+  items: [
+    {
+      value: "No",
+      text: "Female"
+    },
+    {
+      value: "no",
+      text: "Female"
+    }
+  ]
+}) }}
       </p>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+      
+      {% call govukFieldset({
+        legend: {
+          
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      
+        {{ govukInput({
+          label: {
+            text: "Title"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-line-1",
+          name: "addressLine1",
+          autocomplete: "address-line1"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "First name(s)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-line-2",
+          name: "addressLine2",
+          autocomplete: "address-line2"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-town",
+          name: "addressTown",
+          autocomplete: "address-level2"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Email"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-postcode",
+          name: "addressPostcode",
+          autocomplete: "postal-code"
+        }) }}
+       
+        {{ govukInput({
+          label: {
+            text: "Phone number"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "address-postcode",
+          name: "addressPostcode",
+          autocomplete: "postal-code"
+        }) }}
 
-      <p>
-        Read more <a href="/path/of/page">about this topic</a>.
-      </p>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      {% endcall %}
+      
+
+      
 
     </div>
   </div>
