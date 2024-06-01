@@ -16,6 +16,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+    
+
       <h1 class="govuk-heading-l">
         Before you continue you are required to prove who you are
       </h1>
@@ -64,12 +66,13 @@
   ]
 }) }}
 
+<form class="form" action="/What-identity-document-do-you-have" method="post">
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+  </button>
 
-{{ govukButton({
-  text: "Save and continue"
-}) }}
+</form>
 
     </div>
   </div>
